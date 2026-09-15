@@ -14,7 +14,7 @@ Research commercially testable growth opportunities for [MediQ](https://www.medi
 - Propose a small paid-pilot test with target buyer, scope, price hypothesis, success criterion and a decision to proceed, revise or stop. A proposed pilot is not authorization to contact a buyer, build or deploy software, obtain data, or incur costs.
 - Use sourced figures where available. Label estimates and assumptions, explain calculations, and avoid fabricated margins, guaranteed profits, or unsupported market-size claims.
 - Verify claims about licenses, facility capabilities, approvals and permitted activities independently. Statements on the website, including FDA or SAHPRA references, are not proof of current authorization. Confirm current licenses and scope before recommending launch of any regulated service; clearly mark unresolved dependencies.
-- Use official current regulatory sources for regulatory conclusions and state when specialist confirmation is needed.
+- Use official current regulatory sources to map the requirements for each idea and state when specialist confirmation is needed. Consider revenue options that do not depend on an unresolved device approval, while confirming their own applicable obligations. Software scope depends on intended use; never assume all software is exempt or recommend relabeling to evade regulation. Assess commercial demand, buyer budget and integration feasibility alongside regulatory feasibility.
 
 ## Boundaries
 
