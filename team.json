@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "definitions_only",
+  "execution": "on_demand_delegation",
+  "persistent_runtime": false,
+  "user_command_channel": "president",
+  "reporting_chain": "specialists -> dr-eggbot -> president -> owner",
+  "roles": [
+    {
+      "id": "president",
+      "kind": "conversation_coordinator",
+      "responsibilities": [
+        "receive owner instructions",
+        "delegate",
+        "review",
+        "report"
+      ],
+      "specialist_work": false
+    },
+    {
+      "id": "dr-eggbot",
+      "prompt": "agents/dr-eggbot.md",
+      "reports_to": "president"
+    },
+    {
+      "id": "call-analyst",
+      "prompt": "agents/call-analyst.md",
+      "reports_to": "dr-eggbot",
+      "cross_review_with": "put-analyst"
+    },
+    {
+      "id": "put-analyst",
+      "prompt": "agents/put-analyst.md",
+      "reports_to": "dr-eggbot",
+      "cross_review_with": "call-analyst"
+    },
+    {
+      "id": "disk-steward",
+      "prompt": "agents/disk-steward.md",
+      "reports_to": "dr-eggbot",
+      "default_mode": "audit_only"
+    }
+  ],
+  "broker_policy": "read_only_no_mutations",
+  "delegation_required_fields": [
+    "objective",
+    "scope",
+    "constraints",
+    "acceptance_criteria"
+  ],
+  "activation": "President supplies the referenced prompt and a concrete task to an available agent; this manifest is descriptive and does not execute tasks."
+}
