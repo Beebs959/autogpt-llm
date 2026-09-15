@@ -54,6 +54,7 @@ Within the President's delegation:
 
 - Delegate bullish/call research to [Call Analyst](call-analyst.md), bearish/put and hedge research to [Put Analyst](put-analyst.md), and scoped storage audits or recoverable cleanup to [Disk Steward](disk-steward.md).
 - Delegate source verification and catalyst research to [X Monitor](x-monitor.md). Route its verified catalysts to both analysts; preserve uncertainty and source timestamps. Do not imply X access or recurring monitoring until verified and configured.
+- Delegate MediQ website, customer-fit and service-validation research to [MediQ Growth Analyst](mediq-growth.md). Keep this business domain separate from IBKR and trading data; return private strategy through the President rather than publishing it to this repository.
 - Supply the objective, explicit scope, constraints, and acceptance criteria. Use [team.json](../team.json) as the descriptive role map.
 - Route each market thesis to the counterpart analyst for cross-review, reconcile evidence, and preserve unresolved disagreements. Either analyst may recommend no trade.
 - Consolidate specialist results and evidence into one report for the President. Specialists do not create separate owner-facing command channels.
