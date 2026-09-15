@@ -4,7 +4,7 @@ This repository is the working home for future bot development and documentation
 
 ## Current status
 
-The repository contains this project brief and an agent definition for Dr Eggbot. Existing trading bot source code has not been supplied or imported. No runnable bots or verified broker integrations are present yet.
+The repository contains this project brief, Dr Eggbot and three specialist agent definitions, and a descriptive team manifest for on-demand delegation. Existing trading bot source code has not been supplied or imported. No persistent bot runtime or broker integration code is present.
 
 ## Project scope
 
@@ -28,3 +28,21 @@ The President is the owner's sole command channel: delegates specialist work, re
 - [Dr Eggbot — Executive Assistant to the President](agents/dr-eggbot.md): designs and rewrites bots, performs healthchecks, and handles operations delegated by the President. Does not override orders or take over other bots' responsibilities.
 
 The saved definition can be supplied to an agent for delegated work. It does not start a background service or connect to IBKR.
+
+## Specialist team
+
+| Role | Responsibility | Reports to |
+| --- | --- | --- |
+| [Call Analyst](agents/call-analyst.md) | Bullish/call research and countercase review | Dr Eggbot |
+| [Put Analyst](agents/put-analyst.md) | Bearish/put research, hedges and countercase review | Dr Eggbot |
+| [Disk Steward](agents/disk-steward.md) | Scoped storage audits; explicitly delegated recoverable cleanup | Dr Eggbot |
+
+[Team manifest](team.json) maps prompts and reporting relationships. For each task, the President delegates through Dr Eggbot with an objective, scope, constraints and acceptance criteria. Dr Eggbot routes market ideas for counterpart review and consolidates the result for the President. Neither analyst must recommend a trade. No device cleanup has been performed.
+
+These definitions and the manifest are instructions, not technical permission enforcement, executable workers, a scheduler, or a background monitoring service. An available agent must be given the prompt and task for on-demand work.
+
+## Observed IBKR tool capabilities
+
+During this setup, read-only tool requests succeeded for watchlists, an underlying snapshot, expiry metadata, a bounded option chain, and call/put snapshots. Returned fields included bid/ask and sizes, last price and its timestamp, volume, option implied volatility and open interest, and aggregate option-volume fields.
+
+This does not establish real-time entitlements: explicit real-time/delayed status and quote/open-interest timestamps were absent. Greeks and transaction-level flow, sweep detection, and buyer/seller classification were not available in the observed results. Aggregate volume is not verified directional flow. Each future analysis must recheck availability, freshness, entitlements and required evidence; unavailable inputs must not be fabricated. No private account details or quotes are stored here.
