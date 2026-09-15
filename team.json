@@ -39,6 +39,14 @@
       "prompt": "agents/disk-steward.md",
       "reports_to": "dr-eggbot",
       "default_mode": "audit_only"
+    },
+    {
+      "id": "x-monitor",
+      "prompt": "agents/x-monitor.md",
+      "reports_to": "dr-eggbot",
+      "default_mode": "read_only_research",
+      "access_status": "unverified",
+      "schedule_status": "not_configured"
     }
   ],
   "broker_policy": "read_only_no_mutations",
